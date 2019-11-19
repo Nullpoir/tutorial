@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'article.apps.ArticleConfig',#追加
+    'article.apps.ArticleConfig',
+    'tinymce',#追加
 ]
 
 MIDDLEWARE = [
