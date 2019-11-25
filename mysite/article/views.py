@@ -5,7 +5,6 @@ from .models import Article #追加
 def TopPageView(requests):
     return render(requests,"index.html")
 
-#以下追加
 def ArticleView(request,pk):
     article = Article.objects.get(pk=pk)
     context = {"article":article}
