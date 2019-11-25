@@ -1,0 +1,25 @@
+<!-- base.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" id="mysite">
+<head>
+  <title>{% block title %}Django-Tutorial{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+  {% block head %}
+  {% endblock %}
+</head>
+<body id=root>
+  <header id="header">
+    Django-Tutorial
+  </header>
+  <div id="main-content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <footer id="footer">
+    チュートリアルがんばるぞい since 2019
+  </footer>
+</body>
+</html>

@@ -1,15 +1,29 @@
-<!-- 追加 -->
-{% load static %}
-<!DOCTYPE html>
-<html lang="ja" id="mysite">
-<head>
-  <title>トップページ</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends "base.html" %}
+{% load static %}<!-- 追加 -->
+{% block title %}トップページ{% endblock %}
+{% block head %}
   <!-- 追加 -->
-  <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
-</head>
-<body id=root>
-  <h1>Hello,World"</h1>
-</body>
-</html>
+  <link rel="stylesheet" type="text/css" href="{% static "css/top.css" %}">
+  <!-- ここまで -->
+{% endblock %}
+{% block content %}
+<h1>Hello,world!</h1>
+<!-- 追加 -->
+<div class="article-list">
+<!-- ここまで -->
+{% for article in  articles %}
+<!-- 変更 -->
+  <a class="article-item" href="article/{{article.pk}}">
+    <div class="article-pub-date">
+      {{article.pub_date}}
+    </div>
+    <div class="article-title">
+      {{article.title}}
+    </div>
+  </a>
+<!-- ここまで -->
+{% endfor %}
+<!-- 追加 -->
+</div>
+<!-- ここまで -->
+{% endblock %}
